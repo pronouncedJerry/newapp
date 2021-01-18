@@ -2,8 +2,9 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { colors } from 'theme'
 import Home from 'scenes/home'
-import Profile from 'scenes/profile'
+import History from 'scenes/history'
 import Details from 'scenes/details'
+import Login from 'scenes/login'
 import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
 
@@ -12,6 +13,7 @@ import HeaderTitle from './HeaderTitle'
 // ------------------------------------
 
 const Stack = createStackNavigator()
+const SignOutStack = createStackNavigator()
 
 const navigationProps = {
   headerTintColor: 'white',
@@ -39,7 +41,7 @@ export const HomeNavigator = () => (
       })}
     />
     <Stack.Screen
-      name="Details"
+      name="Profile"
       component={Details}
       options={({ navigation }) => ({
         title: 'Home',
@@ -50,17 +52,17 @@ export const HomeNavigator = () => (
   </Stack.Navigator>
 )
 
-export const ProfileNavigator = () => (
+export const HistoryNavigator = () => (
   <Stack.Navigator
-    initialRouteName="Profile"
+    initialRouteName="History"
     headerMode="screen"
     screenOptions={navigationProps}
   >
     <Stack.Screen
-      name="Profile"
-      component={Profile}
+      name="History"
+      component={History}
       options={({ navigation }) => ({
-        title: 'Profile',
+        title: 'History',
         headerLeft: () => <HeaderLeft navigation={navigation} />,
         headerTitle: () => <HeaderTitle />,
       })}
@@ -73,4 +75,16 @@ export const ProfileNavigator = () => (
       }}
     />
   </Stack.Navigator>
+)
+
+export const SignOutNavigator = () => (
+  <SignOutStack.Navigator initialRouteName="Login" headerShown="false">
+    <SignOutStack.Screen
+      name="Login"
+      component={Login}
+      options={{
+        title: 'Login',
+      }}
+    />
+  </SignOutStack.Navigator>
 )

@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { View, SafeAreaView, Text } from 'react-native'
+import Button from 'components/Button'
 
 import { DrawerActions } from '@react-navigation/native'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
@@ -39,6 +40,14 @@ const DrawerMenu = (props) => (
     </View>
     <View style={styles.main}>
       <Text>Drawer Menu</Text>
+      <Button
+        title="Sign Out"
+        color="white"
+        backgroundColor={colors.pink}
+        onPress={() => {
+          props.navigation.navigate('Login')
+        }}
+      />
     </View>
   </SafeAreaView>
 )
@@ -46,12 +55,14 @@ const DrawerMenu = (props) => (
 DrawerMenu.propTypes = {
   navigation: PropTypes.shape({
     dispatch: PropTypes.func,
+    navigate: PropTypes.func,
   }),
 }
 
 DrawerMenu.defaultProps = {
   navigation: {
     dispatch: () => null,
+    navigate: () => null,
   },
 }
 

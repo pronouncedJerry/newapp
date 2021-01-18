@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {
   createDrawerNavigator,
   DrawerContentScrollView,
@@ -26,5 +27,19 @@ const DrawerNavigator = () => (
     <Drawer.Screen name="Home" component={TabNavigator} />
   </Drawer.Navigator>
 )
+
+Drawer.propTypes = {
+  navigation: PropTypes.shape({
+    dispatch: PropTypes.func,
+    navigate: PropTypes.func,
+  }),
+}
+
+Drawer.defaultProps = {
+  navigation: {
+    dispatch: () => null,
+    navigate: () => null,
+  },
+}
 
 export default DrawerNavigator
