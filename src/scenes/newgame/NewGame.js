@@ -1,40 +1,23 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {
-  StyleSheet, Text, View, StatusBar,
-} from 'react-native'
+import { TextInput, View } from 'react-native'
 import Button from 'components/Button'
 import { colors } from 'theme'
+import styles from './styles'
 
-const styles = StyleSheet.create({
-  root: {
-    flex: 1,
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: colors.lightGrayPurple,
-  },
-  title: {
-    fontSize: 24,
-    marginBottom: 20,
-  },
-})
-
-const NewGame = ({ route, navigation }) => {
-  const from = route?.params?.from
-  return (
-    <View style={styles.root}>
-      <StatusBar barStyle="light-content" />
-      <Text style={styles.title}>{`NewGame (from ${from})`}</Text>
+const NewGame = () => (
+  <View style={styles.container}>
+    <View style={styles.keyboardawarescrollview}>
+      <TextInput style={styles.input} placeholder="Player name" />
       <Button
-        title="Go Back"
+        style={styles.button}
+        title="Add Player"
         color="white"
-        backgroundColor={colors.pink}
-        onPress={navigation.goBack}
+        backgroundColor={colors.lightPurple}
       />
     </View>
-  )
-}
+  </View>
+)
 
 NewGame.propTypes = {
   route: PropTypes.shape({
