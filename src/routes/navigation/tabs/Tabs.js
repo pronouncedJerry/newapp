@@ -15,21 +15,21 @@ const TabNavigator = () => (
       // eslint-disable-next-line react/prop-types
       tabBarIcon: ({ focused }) => {
         switch (route.name) {
-          case 'Home':
+          case 'CurrentGame':
             return (
               <FontIcon
-                name="home"
+                name="trophy"
                 color={focused ? colors.lightPurple : colors.gray}
-                size={20}
+                size={22}
                 solid
               />
             )
           case 'History':
             return (
               <FontIcon
-                name="user"
+                name="history"
                 color={focused ? colors.lightPurple : colors.gray}
-                size={20}
+                size={22}
                 solid
               />
             )
@@ -42,17 +42,14 @@ const TabNavigator = () => (
       activeTintColor: colors.lightPurple,
       inactiveTintColor: colors.gray,
       style: {
-        // backgroundColor: 'white',
-        // borderTopColor: 'gray',
-        // borderTopWidth: 1,
-        // paddingBottom: 5,
-        // paddingTop: 5,
+        paddingBottom: 5,
+        paddingTop: 5,
       },
     }}
-    initialRouteName="Home"
+    initialRouteName="CurrentGame"
     swipeEnabled={false}
   >
-    <Tab.Screen name="Home" component={HomeNavigator} />
+    <Tab.Screen name="CurrentGame" component={HomeNavigator} />
     <Tab.Screen name="History" component={HistoryNavigator} />
   </Tab.Navigator>
 )

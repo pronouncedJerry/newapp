@@ -20,29 +20,29 @@ const styles = StyleSheet.create({
   },
 })
 
-const Home = ({ navigation }) => (
+const CurrentGame = ({ navigation }) => (
   <View style={styles.root}>
     <StatusBar barStyle="light-content" />
-    <Text style={styles.title}>Home</Text>
+    <Text style={styles.title}>Current Game</Text>
     <Button
       title="Go to Profile"
       color="white"
       backgroundColor={colors.lightPurple}
       onPress={() => {
-        navigation.navigate('Profile', { from: 'Home' })
+        navigation.navigate('Profile', { from: 'CurrentGame' })
       }}
     />
   </View>
 )
 
-Home.propTypes = {
+CurrentGame.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func,
   }),
 }
 
-Home.defaultProps = {
+CurrentGame.defaultProps = {
   navigation: { navigate: () => null },
 }
 
-export default Home
+export default CurrentGame

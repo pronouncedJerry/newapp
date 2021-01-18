@@ -1,7 +1,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { colors } from 'theme'
-import Home from 'scenes/home'
+import CurrentGame from 'scenes/CurrentGame'
 import History from 'scenes/history'
 import Details from 'scenes/details'
 import Login from 'scenes/login'
@@ -27,15 +27,15 @@ const navigationProps = {
 
 export const HomeNavigator = () => (
   <Stack.Navigator
-    initialRouteName="Home"
+    initialRouteName="CurrentGame"
     headerMode="screen"
     screenOptions={navigationProps}
   >
     <Stack.Screen
-      name="Home"
-      component={Home}
+      name="CurrentGame"
+      component={CurrentGame}
       options={({ navigation }) => ({
-        title: 'Home',
+        title: 'Current Game',
         headerLeft: () => <HeaderLeft navigation={navigation} />,
         headerTitle: () => <HeaderTitle />,
       })}
@@ -44,7 +44,7 @@ export const HomeNavigator = () => (
       name="Profile"
       component={Details}
       options={({ navigation }) => ({
-        title: 'Home',
+        title: 'Profile',
         headerLeft: () => <HeaderLeft navigation={navigation} />,
         headerTitle: () => <HeaderTitle />,
       })}
