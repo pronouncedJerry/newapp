@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { StyleSheet } from 'react-native'
 import FontIcon from 'react-native-vector-icons/FontAwesome5'
 
@@ -9,7 +8,7 @@ const styles = StyleSheet.create({
   },
 })
 
-const HeaderLeft = ({ navigation }) => (
+const HeaderRight = ({ navigation }) => (
   <FontIcon.Button
     name="bars"
     color="white"
@@ -21,14 +20,4 @@ const HeaderLeft = ({ navigation }) => (
   />
 )
 
-HeaderLeft.propTypes = {
-  navigation: PropTypes.shape({
-    openDrawer: PropTypes.func,
-  }),
-}
-
-HeaderLeft.defaultProps = {
-  navigation: { openDrawer: () => null },
-}
-
-export default HeaderLeft
+export default HeaderRight

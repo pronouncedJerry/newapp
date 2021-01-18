@@ -5,8 +5,8 @@ import CurrentGame from 'scenes/CurrentGame'
 import History from 'scenes/history'
 import Details from 'scenes/details'
 import Login from 'scenes/login'
-import HeaderLeft from './HeaderLeft'
 import HeaderTitle from './HeaderTitle'
+import HeaderRight from './HeaderRight'
 
 // ------------------------------------
 // Constants
@@ -19,6 +19,7 @@ const navigationProps = {
   headerTintColor: 'white',
   headerStyle: { backgroundColor: colors.darkPurple },
   headerTitleStyle: { fontSize: 18 },
+  headerTitleAlign: 'center',
 }
 
 // ------------------------------------
@@ -36,8 +37,8 @@ export const HomeNavigator = () => (
       component={CurrentGame}
       options={({ navigation }) => ({
         title: 'Current Game',
-        headerLeft: () => <HeaderLeft navigation={navigation} />,
         headerTitle: () => <HeaderTitle />,
+        headerRight: () => <HeaderRight navigation={navigation} />,
       })}
     />
     <Stack.Screen
@@ -45,8 +46,8 @@ export const HomeNavigator = () => (
       component={Details}
       options={({ navigation }) => ({
         title: 'Profile',
-        headerLeft: () => <HeaderLeft navigation={navigation} />,
         headerTitle: () => <HeaderTitle />,
+        headerRight: () => <HeaderRight navigation={navigation} />,
       })}
     />
   </Stack.Navigator>
@@ -63,8 +64,8 @@ export const HistoryNavigator = () => (
       component={History}
       options={({ navigation }) => ({
         title: 'History',
-        headerLeft: () => <HeaderLeft navigation={navigation} />,
         headerTitle: () => <HeaderTitle />,
+        headerRight: () => <HeaderRight navigation={navigation} />,
       })}
     />
     <Stack.Screen
