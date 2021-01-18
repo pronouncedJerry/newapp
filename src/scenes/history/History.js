@@ -25,11 +25,11 @@ const History = ({ navigation }) => (
     <StatusBar barStyle="light-content" />
     <Text style={styles.title}>History</Text>
     <Button
-      title="Go to Profile"
+      title="Start New Game"
       color="white"
       backgroundColor={colors.lightPurple}
       onPress={() => {
-        navigation.navigate('Profile', { from: 'History' })
+        navigation.navigate('NewGame', { from: 'History' })
       }}
     />
   </View>

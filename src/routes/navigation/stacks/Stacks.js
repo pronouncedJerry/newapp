@@ -1,9 +1,9 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack'
 import { colors } from 'theme'
-import CurrentGame from 'scenes/CurrentGame'
+import CurrentGame from 'scenes/currentgame'
 import History from 'scenes/history'
-import Details from 'scenes/details'
+import NewGame from 'scenes/newgame'
 import Login from 'scenes/login'
 import HeaderTitle from './HeaderTitle'
 import HeaderRight from './HeaderRight'
@@ -42,10 +42,10 @@ export const HomeNavigator = () => (
       })}
     />
     <Stack.Screen
-      name="Profile"
-      component={Details}
+      name="NewGame"
+      component={NewGame}
       options={({ navigation }) => ({
-        title: 'Profile',
+        title: 'New Game',
         headerTitle: () => <HeaderTitle />,
         headerRight: () => <HeaderRight navigation={navigation} />,
       })}
@@ -69,10 +69,10 @@ export const HistoryNavigator = () => (
       })}
     />
     <Stack.Screen
-      name="Details"
-      component={Details}
+      name="NewGame"
+      component={NewGame}
       options={{
-        title: 'Details',
+        title: 'New Game',
       }}
     />
   </Stack.Navigator>

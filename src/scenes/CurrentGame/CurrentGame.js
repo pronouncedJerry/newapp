@@ -25,11 +25,11 @@ const CurrentGame = ({ navigation }) => (
     <StatusBar barStyle="light-content" />
     <Text style={styles.title}>Current Game</Text>
     <Button
-      title="Go to Profile"
+      title="Start New Game"
       color="white"
       backgroundColor={colors.lightPurple}
       onPress={() => {
-        navigation.navigate('Profile', { from: 'CurrentGame' })
+        navigation.navigate('NewGame', { from: 'CurrentGame' })
       }}
     />
   </View>
